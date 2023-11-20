@@ -13,6 +13,7 @@ const app = express();
 
 // middleware
 // Client side (flutter) -> Server side(Nodejs) -> Client side
+app.use(express.json());
 app.use(authRouter);
 
 // Database connection
@@ -24,6 +25,6 @@ mongoose
         console.error(e)
     });
 
-app.listen(PORT, () => {
+app.listen(PORT, "125.130.214.57", () => {
     console.log(`The Server is running on PORT = ${PORT}`);
 })
