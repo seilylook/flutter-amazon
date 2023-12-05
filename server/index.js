@@ -6,6 +6,7 @@ const DB_URI = process.env.PUBLIC_DATABASE_URI;
 
 // IMPORT FROM OTHER ROUTES || FILES
 const authRouter = require('./routes/auth');
+const adminRouter = require('./routes/admin');
 
 // INIT SETTING
 const PORT = 3000;
@@ -15,6 +16,7 @@ const app = express();
 // Client side (flutter) -> Server side(Nodejs) -> Client side
 app.use(express.json());
 app.use(authRouter);
+app.use(adminRouter)
 
 // Database connection
 mongoose
